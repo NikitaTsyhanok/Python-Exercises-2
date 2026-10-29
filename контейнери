@@ -1,0 +1,31 @@
+# --- 1. Списки ---
+C = [10.0, 15.5, 17.1, 17.6, 19.0, 19.9, 25.0, 25.8, 28.0, 29.0, 30.1]  #[cite: 2]
+F = [round(c * 1.8 + 32, 1) for c in reversed(C)]
+print("1. Списки:")
+print(F)
+print("Всього вимірювань:", len(F))
+print("-" * 40)
+
+# --- 2. Кортежі ---
+grades = (4, 5, 4, 4, 3, 5, 3, 3, 2, 5, 5, 5)  #[cite: 2]
+print("2. Кортежі:")
+if 2 in grades:  #[cite: 2]
+  print('Студент має принаймні одну двійку з дисципліни!')  #[cite: 2]
+else:
+  print('Студент вчиться без двійок')  #[cite: 2]
+print("-" * 40)
+
+# --- 3. Словники ---
+students = {"Васильєв": 3.5, "Семенов": 4.0, "Петров": 4.5, "Іванов": 3.0, "Мар'їн": 5.0}  #[cite: 2]
+print("3. Словники:")
+for student in students.keys():
+  students.update({student: students[student] + 1 if students[student] + 1 <= 5 else 5.0})  #[cite: 2]
+print(students)
+print("-" * 40)
+
+# --- 4. Множини ---
+responces = ["Іванов", "Петров", "Сидоров", "Васильєв", "Семенов", "Іванов", "Мар'їн", "Сидоров", "Дмитрієв", "Іванов"]  #[cite: 2]
+print("4. Множини:")
+print("Всього анкет заповнено:", len(responces))  #[cite: 2]
+respondents = set(responces)  #[cite: 2]
+print("Всього респондентів:", len(respondents))  #[cite: 2]
