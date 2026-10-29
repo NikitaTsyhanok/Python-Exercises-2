@@ -1,0 +1,65 @@
+# --- Частина 1. Функції однієї змінної ---
+print("--- Частина 1: Функції однієї змінної ---")
+def sqrPlus1(x):
+  return x**2 + 1  #[cite: 3]
+
+numbers = []
+n = 1
+while True:
+  if n <= 10:
+    x = int(input(str(n) + " - введіть число від 0 до 10: "))  #[cite: 3]
+    if 0 <= x <= 10:  #[cite: 3]
+      numbers.append(sqrPlus1(x))  #[cite: 3]
+    else:
+      print("Потрібне число від 0 до 10!")  #[cite: 3]
+  else:
+    break
+  n = n + 1
+print("Отриманий список:", numbers)  #[cite: 3]
+
+
+# --- Частина 2. Лямбда-функції ---
+print("\n--- Частина 2: Лямбда-функції ---")
+add = lambda a, b: a + b  #[cite: 3]
+sub = lambda a, b: a - b  #[cite: 3]
+mul = lambda a, b: a * b  #[cite: 3]
+div = lambda a, b: a / b if b != 0 else 0  #[cite: 3]
+
+a = int(input("Введіть перше число: "))  #[cite: 3]
+b = int(input("Введіть друге число: "))  #[cite: 3]
+
+menu = {}  #[cite: 3]
+menu['1'] = "Додати числа"  #[cite: 3]
+menu['2'] = "Відняти числа"  #[cite: 3]
+menu['3'] = "Перемножити числа"  #[cite: 3]
+menu['4'] = "Поділити числа"  #[cite: 3]
+menu['5'] = "завершити роботу"  #[cite: 3]
+options = menu.keys()  #[cite: 3]
+for entry in options:  #[cite: 3]
+    print(entry, menu[entry])  #[cite: 3]
+
+while True:   #[cite: 3]
+  selection = input("Оберіть операцію: ")  #[cite: 3]
+  if selection == '1':  #[cite: 3]
+    print("Додавання:", add(a, b))  #[cite: 3]
+  elif selection == '2':  #[cite: 3]
+    print("Віднімання:", sub(a, b))  #[cite: 3]
+  elif selection == '3':  #[cite: 3]
+    print("Множення:", mul(a, b))  #[cite: 3]
+  elif selection == '4':  #[cite: 3]
+    print("Ділення:", div(a, b))  #[cite: 3]
+  elif selection == '5':  #[cite: 3]
+    break  #[cite: 3]
+  else:   #[cite: 3]
+    print("Невідома операція!")  #[cite: 3]
+
+
+# --- Частина 3. Функція з аргументами за замовчуванням ---
+print("\n--- Частина 3: Функція з аргументами за замовчуванням ---")
+def controlEngine(id, name, operation="стоп", priority="високий"):  #[cite: 3]
+  print('Агрегат:', name, '#', id, "\n\tОбрана операція:", operation, "\n\tПриорітет:", priority)  #[cite: 3]
+
+controlEngine(1, "реактор")  #[cite: 3]
+controlEngine(1, "реактор", "запуск")  #[cite: 3]
+controlEngine(1, "реактор", priority="звичайний")  #[cite: 3]
+controlEngine(operation="запуск", id=1, name="реактор", priority="звичайний")  #[cite: 3]
